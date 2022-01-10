@@ -7,13 +7,13 @@
 
 <script>
 import Header from './components/Header.vue';
-import MainList from './components/MainList.vue'
+import MainList from './components/MainList.vue';
 
 export default {
   name: "App",
   components: {
     Header,
-    MainList
+    MainList,
   },
 };
 </script>

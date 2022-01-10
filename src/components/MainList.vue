@@ -1,5 +1,6 @@
 <template>
     <div class="main">
+        <Select @changeValue="changeFunction" />
         <div class="container">
             <SingleCard v-for="(element, index) in artist" :key="index" :details="element"/>
         </div>
@@ -8,17 +9,24 @@
 
 <script>
 import SingleCard from './SingleCard.vue';
+import Select from './Select.vue';
 import axios from 'axios';
 
 export default {
     name: "MainList",
     components: {
-        SingleCard
+        SingleCard,
+        Select,
     },
     data: function(){
         return{
             artist: [],
         };
+    },
+    methods:{
+        changeFunction: function(value){
+            console.log(value)
+        }
     },
     created: function(){
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
