@@ -2,7 +2,12 @@
     <div class="main">
         <Select @changeValue="changeFunction" />
         <div class="container">
-            <SingleCard v-for="(element, index) in artist" :key="index" :details="element"/>
+            <template v-if="filteredValue.length > 0">
+                <SingleCard v-for="(element, index) in filteredValue" :key="index" :details="element"/>
+            </template>
+            <template v-else>
+                <div class="no-result">Nessun risultato</div>
+            </template>
         </div>
     </div>
 </template>
@@ -21,11 +26,25 @@ export default {
     data: function(){
         return{
             artist: [],
+            selectedValue: '',
         };
     },
     methods:{
         changeFunction: function(value){
-            console.log(value)
+            this.selectedValue = value;
+        }
+    },
+    computed: {
+        filteredValue: function(){
+            if(this.selectedValue === ''  || this.selectedValue === 'all'){
+                return this.artist
+            }
+
+            const filteredArray = this.artist.filter((element) => {
+                return element.genre.toLowerCase().includes(this.selectedValue.toLowerCase())
+            });
+
+            return filteredArray
         }
     },
     created: function(){
@@ -51,6 +70,11 @@ export default {
         display: flex;
         // align-items: center;
         flex-wrap: wrap;
+    }
+
+    .no-result{
+        color: white;
+        font-size: 20px;
     }
 }
 </style>

@@ -30,7 +30,7 @@ export default {
     padding-top: 20px;
     // padding-bottom: 60px;
     text-align: center;
-    // height: 400px;
+    height: 400px;
 
     &:hover{
         cursor: pointer;

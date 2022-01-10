@@ -6,6 +6,7 @@
             <option value="pop">Pop</option>
             <option value="jazz">Jazz</option>
             <option value="metal">Metal</option>
+            <option value="r/b">R&B</option>
         </select>
         <div class="select-text">Risultato:</div>
     </div>
@@ -19,9 +20,6 @@ export default {
             selectValue: ''
         }
     },
-    methods:{
-
-    }
 }
 </script>
 
