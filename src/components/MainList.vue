@@ -41,7 +41,7 @@ export default {
         width: 70%;
         margin: auto;
         display: flex;
-        align-items: center;
+        // align-items: center;
         flex-wrap: wrap;
     }
 }

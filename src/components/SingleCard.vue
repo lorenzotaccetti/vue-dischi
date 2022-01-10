@@ -25,17 +25,23 @@ export default {
 
 .single-card{
     width: calc((100% / 5) - 40px);
-    margin: 0 20px;
+    margin: 20px 20px;
     background-color: $brand-primary-color;
     padding-top: 20px;
-    padding-bottom: 60px;
+    // padding-bottom: 60px;
     text-align: center;
-    height: 400px;
+    // height: 400px;
+
+    &:hover{
+        cursor: pointer;
+    }
+
     .artist-image{
 
         img{
             height: 150px;
             width: 150px;
+            // display: block;
         }
     }
 
@@ -47,6 +53,10 @@ export default {
         padding-bottom: 30px;
         width: 80%;
         margin: auto;
+
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     .artist-name,
